@@ -2,7 +2,7 @@
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 
-namespace BudgetApi.Models
+namespace BudgetApi.DAL.Models
 {
     public class Depense
     {
