@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BudgetApi.BusinessLayer.Interfaces;
+using BudgetApi.BusinessLayer.Models;
 using BudgetApi.DTO;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -37,19 +38,20 @@ namespace BudgetApi.Controllers
         [HttpGet("{id:length(24)}", Name = "GetDepense")]
         public ActionResult<DepenseDTO> Get(string id)
         {
-            //var dep = _depenseServices.GetOne(id);
-            //if (dep == null)
-            //    return NotFound();
+            var dep = _depenseServices.GetOne(id);
+            if (dep == null)
+                return NotFound();
 
-            //return dep;
-            return NoContent();
+            return _mapper.Map<DepenseDTO>(dep);
+
         } 
 
         // POST: api/Depense
         [HttpPost]
         public ActionResult<DepenseDTO> Post([FromBody] DepenseDTO depense)
-        { 
-            //_depenseServices.Create(depense);
+        {
+            var dep = _mapper.Map<DepenseBL>(depense);
+            _depenseServices.Create(dep);
             return CreatedAtRoute("GetDepense", new { id = depense.Id.ToString() }, depense);
 
         }
@@ -58,11 +60,12 @@ namespace BudgetApi.Controllers
         [HttpPut("{id:length(24)}")]
         public IActionResult Put(string id, [FromBody] DepenseDTO depense)
         {
-            //var dep = _depenseServices.GetOne(id);
-            //if (dep == null)
-            //    return NotFound();
+            var dep = _depenseServices.GetOne(id);
+            if (dep == null)
+                return NotFound();
 
-            //_depenseServices.Update(id, depense);
+            var depBL = _mapper.Map<DepenseBL>(dep);
+            _depenseServices.Update(id, depBL);
 
             return NoContent();
         }

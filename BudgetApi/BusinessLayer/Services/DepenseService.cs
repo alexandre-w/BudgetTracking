@@ -21,6 +21,8 @@ namespace BudgetApi.BusinessLayer.Services
         }
         public DepenseBL Create(DepenseBL depense)
         {
+            CheckDepenseData(depense);
+
             Depense dep = _mapper.Map<Depense>(depense);
             Depense depReturn = _depenseRepo.Create(dep);
             return _mapper.Map<DepenseBL>(depReturn);
@@ -28,12 +30,13 @@ namespace BudgetApi.BusinessLayer.Services
 
         public void Delete(DepenseBL depenseIn)
         {
-            throw new NotImplementedException();
+            Depense dep = _mapper.Map<Depense>(depenseIn);
+            _depenseRepo.Delete(dep);
         }
 
         public void Delete(string id)
         {
-            throw new NotImplementedException();
+            _depenseRepo.Delete(id);
         }
 
         public List<DepenseBL> GetAll()
@@ -49,12 +52,25 @@ namespace BudgetApi.BusinessLayer.Services
 
         public DepenseBL GetOne(string id)
         {
-            throw new NotImplementedException();
+           var dep =  _depenseRepo.GetOne(id);
+           return _mapper.Map<DepenseBL>(dep);  
         }
 
         public void Update(string id, DepenseBL depenseIn)
         {
-            throw new NotImplementedException();
+            var dep = _mapper.Map<Depense>(depenseIn);
+            _depenseRepo.Update(id, dep);
         }
+
+        private DepenseBL CheckDepenseData(DepenseBL depense)
+        {
+            if (depense.DateDepense == DateTime.MinValue)
+                depense.DateDepense = DateTime.Now;
+
+            if (string.IsNullOrEmpty(depense.MoyenPaiement))
+                depense.MoyenPaiement = "CB";
+
+            return depense;
+        } 
     }
 }
