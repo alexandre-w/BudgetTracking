@@ -1,7 +1,7 @@
-﻿using AutoMapper;
+using AutoMapper;
 using BudgetApi.BusinessLayer.Models;
-using BudgetApi.DAL.Models;
 using BudgetApi.DTO;
+using BudgetAPI.Repository.Models;
 
 namespace BudgetApi.Mapper
 {

@@ -19,4 +19,8 @@
     <PackageReference Include="MongoDB.Driver" Version="2.8.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BudgetApi.BusinessLayer\BudgetApi.BusinessLayer.csproj" />
+  </ItemGroup>
+
 </Project>

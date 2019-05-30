@@ -1,17 +1,16 @@
 ﻿using AutoMapper;
 using BudgetApi.BusinessLayer.Interfaces;
 using BudgetApi.BusinessLayer.Models;
-using BudgetApi.DAL.Interfaces;
-using BudgetApi.DAL.Models;
+using BudgetAPI.Repository.Interfaces;
+using BudgetAPI.Repository.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace BudgetApi.BusinessLayer.Services
 {
-    public class DepenseService : IDepenseService
+    public class DepenseService :IDepenseService
     {
-        private readonly IDepenseRepository _depenseRepo  ;
+        private readonly IDepenseRepository _depenseRepo;
         private readonly IMapper _mapper;
 
         public DepenseService(IMapper mapper, IDepenseRepository depenseRepo)
@@ -43,7 +42,7 @@ namespace BudgetApi.BusinessLayer.Services
         {
             var depList = _depenseRepo.GetAll();
             List<DepenseBL> depBlList = new List<DepenseBL>();
-            foreach(var dep in depList)
+            foreach (var dep in depList)
             {
                 depBlList.Add(_mapper.Map<DepenseBL>(dep));
             }
@@ -52,8 +51,8 @@ namespace BudgetApi.BusinessLayer.Services
 
         public DepenseBL GetOne(string id)
         {
-           var dep =  _depenseRepo.GetOne(id);
-           return _mapper.Map<DepenseBL>(dep);  
+            var dep = _depenseRepo.GetOne(id);
+            return _mapper.Map<DepenseBL>(dep);
         }
 
         public void Update(string id, DepenseBL depenseIn)
@@ -71,6 +70,6 @@ namespace BudgetApi.BusinessLayer.Services
                 depense.MoyenPaiement = "CB";
 
             return depense;
-        } 
+        }
     }
 }

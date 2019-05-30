@@ -1,14 +1,12 @@
-﻿using System.Collections.Generic;
-using BudgetApi.DAL.Interfaces;
-using BudgetApi.DAL.Models;
+﻿using BudgetAPI.Repository.Interfaces;
+using BudgetAPI.Repository.Models;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using System.Collections.Generic;
 
-namespace BudgetApi.DAL.Repository
+namespace BudgetAPI.Repository.Repository
 {
-
-
     public class DepenseRepository : IDepenseRepository
     {
         private readonly IMongoCollection<Depense> _depenseCollection;

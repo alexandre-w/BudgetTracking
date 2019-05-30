@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using BudgetApi.BusinessLayer.Interfaces;
 using BudgetApi.BusinessLayer.Models;
 using BudgetApi.DTO;
@@ -64,7 +64,7 @@ namespace BudgetApi.Controllers
             if (dep == null)
                 return NotFound();
 
-            var depBL = _mapper.Map<DepenseBL>(dep);
+            var depBL = _mapper.Map<DepenseBL>(depense);
             _depenseServices.Update(id, depBL);
 
             return NoContent();

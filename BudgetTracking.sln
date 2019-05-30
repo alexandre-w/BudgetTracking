@@ -4,6 +4,10 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BudgetApi.Web", "BudgetApi\BudgetApi.Web.csproj", "{F3443C95-CA15-4448-AEA0-EBD59F0D064B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BudgetApi.BusinessLayer", "BudgetApi.BusinessLayer\BudgetApi.BusinessLayer.csproj", "{BE86BA04-5631-4099-A2D9-F64DEF5DE85B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetAPI.Repository", "BudgetAPI.Repository\BudgetAPI.Repository.csproj", "{9477FA1C-1F93-47EA-86DD-671ECA24FA92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +18,14 @@ Global
 		{F3443C95-CA15-4448-AEA0-EBD59F0D064B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3443C95-CA15-4448-AEA0-EBD59F0D064B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3443C95-CA15-4448-AEA0-EBD59F0D064B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE86BA04-5631-4099-A2D9-F64DEF5DE85B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE86BA04-5631-4099-A2D9-F64DEF5DE85B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE86BA04-5631-4099-A2D9-F64DEF5DE85B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE86BA04-5631-4099-A2D9-F64DEF5DE85B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9477FA1C-1F93-47EA-86DD-671ECA24FA92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9477FA1C-1F93-47EA-86DD-671ECA24FA92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9477FA1C-1F93-47EA-86DD-671ECA24FA92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9477FA1C-1F93-47EA-86DD-671ECA24FA92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

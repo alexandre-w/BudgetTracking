@@ -2,7 +2,7 @@
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 
-namespace BudgetApi.DAL.Models
+namespace BudgetAPI.Repository.Models
 {
     public class Depense
     {
@@ -24,7 +24,5 @@ namespace BudgetApi.DAL.Models
 
         [BsonElement("Category")]
         public string Category { get; set; }
-
-
     }
 }

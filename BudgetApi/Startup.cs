@@ -1,8 +1,8 @@
 using AutoMapper;
 using BudgetApi.BusinessLayer.Interfaces;
 using BudgetApi.BusinessLayer.Services;
-using BudgetApi.DAL.Interfaces;
-using BudgetApi.DAL.Repository;
+using BudgetAPI.Repository.Interfaces;
+using BudgetAPI.Repository.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
