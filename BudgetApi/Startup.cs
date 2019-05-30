@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using BudgetApi.BusinessLayer.Interfaces;
 using BudgetApi.BusinessLayer.Services;
 using BudgetApi.DAL.Interfaces;
@@ -11,38 +11,40 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace BudgetApi
 {
-    public class Startup
+  public class Startup
+  {
+    public Startup(IConfiguration configuration)
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
-        public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-        { 
-            services.AddScoped<IDepenseRepository, DepenseRepository>();
-            services.AddScoped<IDepenseService, DepenseService>();
-            services.AddAutoMapper(typeof(Startup));
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-        }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseHsts();
-            }
-
-            app.UseHttpsRedirection();
-            app.UseMvc();
-        }
+      Configuration = configuration;
     }
+
+    public IConfiguration Configuration { get; }
+
+    // This method gets called by the runtime. Use this method to add services to the container.
+    public void ConfigureServices(IServiceCollection services)
+    {
+      services.AddScoped<IDepenseRepository, DepenseRepository>();
+      services.AddScoped<IDepenseService, DepenseService>();
+      services.AddAutoMapper(typeof(Startup));
+      services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+    }
+
+    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+      if (env.IsDevelopment())
+      {
+        app.UseDeveloperExceptionPage();
+      }
+      else
+      {
+        app.UseHsts();
+      }
+      app.UseDefaultFiles();
+      app.UseStaticFiles();
+
+      app.UseHttpsRedirection();
+      app.UseMvc();
+    }
+  }
 }
