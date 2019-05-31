@@ -20,7 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BudgetApi.BusinessLayer\BudgetApi.BusinessLayer.csproj" />
+    <ProjectReference Include="..\BudgetApi.DTO\BudgetApi.DTO.csproj" />
+    <ProjectReference Include="..\BudgetApi.Mapper\BudgetApi.Mapper.csproj" />
   </ItemGroup>
 
 </Project>

@@ -4,7 +4,6 @@ namespace BudgetApi.DTO
 {
     public class DepenseDTO
     {
-
         public string Id { get; set; }
 
         public double Montant { get; set; }
